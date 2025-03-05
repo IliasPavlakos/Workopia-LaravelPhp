@@ -18,7 +18,19 @@ class JobController extends Controller
         return view('jobs.index', compact('title', 'jobs'));
     }
 
+
+    public function show($id){
+        return 'showing job ' . $id;//view('jobs.show');
+    }
+
     public function create(){
         return view('jobs.create');
+    }
+
+    public function store(Request $request){
+        $title = $request->input('title');
+        $description = $request->input('description');
+
+        return "Title: {$title} Description: {$description}";
     }
 }
