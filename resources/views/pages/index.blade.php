@@ -10,6 +10,7 @@
     <title>Job Listings</title>
 </head>
 <body>
+<x-header/>
 <h1>Welcome to Workopia!</h1>
 </body>
 </html>
