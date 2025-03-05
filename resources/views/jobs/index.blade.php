@@ -10,7 +10,7 @@
     <title>Job Listings</title>
 </head>
 <body>
-<h1>{{ $title }}</h1>
+<h1>Available Jobs</h1>
 @if(!empty($jobs))
     <ul>
         @foreach($jobs as $job)

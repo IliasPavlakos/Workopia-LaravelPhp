@@ -10,21 +10,4 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/jobs', [JobController::class, 'index']);
-
-// Route::get('/jobs/{id}', [JobController::class, 'show']);
-
-Route::get('/jobs/create', [JobController::class, 'create']);
-
-Route::post('/jobs', [JobController::class, 'store']);
-
-Route::get('/test', function (Request $request) {
-    return [
-        'method' => request()->method(),
-        'uri' => $request->path(),
-        'ip' => $request->ip(),
-        'path' => $request->path(),
-        'userAgent' => $request->userAgent(),
-        'header' => $request->header(),
-    ];
-});
+Route::resource('jobs', JobController::class);
