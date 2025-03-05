@@ -10,11 +10,15 @@
     <title>Job Listings</title>
 </head>
 <body>
-<h1><?= $title ?></h1>
-<ul>
-    <?php foreach($jobs as $job): ?>
-    <li><?= htmlspecialchars($job, ENT_QUOTES, 'UTF-8') ?></li>
-    <?php endforeach; ?>
-</ul>
+<h1>{{ $title }}</h1>
+@if(!empty($jobs))
+    <ul>
+        @foreach($jobs as $job)
+            <li>{{$job}}</li>
+        @endforeach
+    </ul>
+@else
+    <p>No jobs available!</p>
+@endif
 </body>
 </html>
