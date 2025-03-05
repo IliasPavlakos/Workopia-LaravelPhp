@@ -31,7 +31,15 @@ class JobController extends Controller
      */
     public function store(Request $request) : string
     {
-        return 'Store';
+        $title = $request->input('title');
+        $description = $request->input('description');
+
+        Job::create([
+           'title' => $title,
+           'description' => $description
+        ]);
+
+        return redirect()->route('jobs.index');
     }
 
     /**
