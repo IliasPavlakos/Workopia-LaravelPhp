@@ -13,6 +13,7 @@
 @if(request()->is('/'))
     <x-hero />
 @endif
+<x-top-banner/>
 <main class="container mx-auto p-4 mt-4">
     {{$slot}}
 </main>
