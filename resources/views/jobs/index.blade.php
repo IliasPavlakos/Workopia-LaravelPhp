@@ -1,10 +1,10 @@
 <x-layout>
 
     <h1>Available Jobs</h1>
-    @if(!empty($jobs))
+    @if(!$jobs || $jobs->count() > 0)
         <ul>
             @foreach($jobs as $job)
-                <li>{{$job['title']}} - {{$job['description']}}</li>
+                <li>{{$job->title}} - {{$job->description}}</li>
             @endforeach
         </ul>
     @else

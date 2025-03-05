@@ -2,11 +2,11 @@
 
 namespace App\Models;
 
-class Job {
-    public static function all():array
-    {
-        return [
+use Illuminate\Database\Eloquent\Model;
 
-        ];
-    }
+class Job extends Model
+{
+    protected $table = 'job_listings';
+
+    protected $fillable = [ 'title', 'description' ];
 }
