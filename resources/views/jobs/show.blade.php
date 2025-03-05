@@ -1,7 +1,5 @@
-@extends('layout')
-
-@section('content')
+<x-layout>
 
     <h1>Show</h1>
 
-@endsection
+</x-layout>

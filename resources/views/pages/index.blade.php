@@ -1,16 +1,3 @@
-<?php
-
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Listings</title>
-</head>
-<body>
-<x-header/>
+<x-layout>
 <h1>Welcome to Workopia!</h1>
-</body>
-</html>
+</x-layout>
