@@ -11,7 +11,7 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        $middleware->validateCsrfTokens(except: ['/submit']); // bypasses the csrf token validation for the /submit route
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
