@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Job extends Model
 {
@@ -11,8 +12,14 @@ class Job extends Model
 
     protected $table = 'job_listings';
 
-    protected $fillable = [ 'title', 'description', 'salary', 'tags', 'type', 'remote',
+    protected $fillable = [ 'user_id', 'title', 'description', 'salary', 'tags', 'type', 'remote',
         'requirements', 'benefits', 'city', 'state', 'zipcode',
         'contact_email', 'contact_phone', 'company_name', 'company_description',
         'company_logo', 'company_website' ];
+
+    // Relation to user
+    public function user() : BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 }
