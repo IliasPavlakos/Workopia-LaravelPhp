@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 Route::get('/', function () {
     return view('welcome');
@@ -22,14 +23,26 @@ Route::get('/test', function (Request $request) {
     ];
 });
 
-Route::get('/users', function (Request $request) {
-    return $request->all(['name', 'age']);
+Route::get('/test2', function () {
+    return response('Hello World!', 200);
 });
 
-Route::get('/users2', function (Request $request) {
-    return $request->all();
+Route::get('/test3', function () {
+    return new Response('Hello World!', 200);
 });
 
-Route::get('/users3', function (Request $request) {
-    return $request->has('name');
+Route::get('/test4', function () {
+    return response('<h1>Hello World!</h1>', 200)->header('content-type', 'text/html');
+});
+
+Route::get('/test5', function () {
+    return response('<h1>Hello World!</h1>', 200)->header('content-type', 'text/plain');
+});
+
+Route::get('/download', function () {
+    return response()->download(public_path('favicon.ico'));
+});
+
+Route::get('/test6', function () {
+    return response('<h1>Hello World!</h1>', 200)->header('content-type', 'text/plain')->cookie('name', 'ilias');
 });
