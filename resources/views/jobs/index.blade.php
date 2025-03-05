@@ -4,7 +4,7 @@
     @if(!empty($jobs))
         <ul>
             @foreach($jobs as $job)
-                <li>{{$job}}</li>
+                <li>{{$job['title']}} - {{$job['description']}}</li>
             @endforeach
         </ul>
     @else
