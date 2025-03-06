@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\User;
 
 class RandomUserSeeder extends Seeder
 {
@@ -14,6 +14,6 @@ class RandomUserSeeder extends Seeder
     public function run(): void
     {
         $users = User::factory(10)->create();
-        echo 'Users created successfully';
+        echo 'Users created successfully!';
     }
 }
