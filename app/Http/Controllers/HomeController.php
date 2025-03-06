@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Job;
+use Illuminate\View\View;
 use Illuminate\Http\Request;
-
-use App\models\Job;
 
 class HomeController extends Controller
 {
-    public function index()
+    // @desc Show home index view
+    // @route GET /
+    public function index(): View
     {
         $jobs = Job::latest()->limit(6)->get();
 
